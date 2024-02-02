@@ -40,7 +40,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\" : \"Patient1\"\r\n}",
+					"raw": "{\r\n    \"name\" : \"Patient1\",\r\n    \"birthday\" : \"1990-01-01\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
