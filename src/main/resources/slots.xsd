@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.our_uri.ru"
+           targetNamespace="http://www.our_uri.ru" elementFormDefault="qualified">
+
+    <xs:element name="createSlotRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="rule" type="tns:rule"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="createSlotResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="result" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="rule">
+        <xs:sequence>
+            <xs:element name="beginningOfTheSchedule" type="xs:dateTime"/>
+            <xs:element name="sessionDuration" type="xs:long"/>
+            <xs:element name="quantityOfTickets" type="xs:integer"/>
+            <xs:element name="doctorId" type="xs:long"/>
+            <xs:element name="cabinetNumber" type="xs:integer"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
