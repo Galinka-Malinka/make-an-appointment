@@ -36,12 +36,12 @@ public class DoctorControllerTest {
     private final DoctorDto doctorDto = DoctorDto.builder().name("Doctor").build();
 
     @Test
-     void shouldCreate() throws Exception {
+    void shouldCreate() throws Exception {
         when(service.create(any())).thenReturn(doctorDto);
 
         mvc.perform(post("/doctor").content(objectMapper.writeValueAsString(doctorDto))
-                .characterEncoding(StandardCharsets.UTF_8)
-                .contentType(MediaType.APPLICATION_JSON))
+                        .characterEncoding(StandardCharsets.UTF_8)
+                        .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.name", is(doctorDto.getName()), String.class));
     }

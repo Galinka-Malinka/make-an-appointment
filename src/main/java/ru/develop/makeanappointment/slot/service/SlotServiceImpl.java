@@ -1,4 +1,4 @@
-package ru.develop.makeanappointment.ws;
+package ru.develop.makeanappointment.slot.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -12,7 +12,9 @@ import ru.develop.makeanappointment.tickets.model.Ticket;
 import ru.develop.makeanappointment.tickets.storage.TicketStorage;
 
 import java.time.Duration;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,6 +23,7 @@ import java.util.List;
 public class SlotServiceImpl implements SlotService {
     private final DoctorStorage doctorStorage;
     public final TicketStorage ticketStorage;
+
     @Override
     public String createSlots(Rule rule) {
         List<Ticket> result = new ArrayList<>();
@@ -40,5 +43,12 @@ public class SlotServiceImpl implements SlotService {
             dateStartOfAdmission = dateStartOfAdmission.plus(duration);
         }
         return "Слоты времени по заданым правилам " + rule + " созданы.";
+    }
+
+    @Override
+    public List<TicketDto> getFreeSlotsToTheDoctor(Long id, LocalDate date) {
+        return TicketMapper.toListTicketDto(ticketStorage
+                .findAllByDoctorIdAndDateStartOfAdmissionAfterAndDateStartOfAdmissionBeforeAndPatientIsNull(id,
+                        LocalDateTime.of(date, LocalTime.MIN), LocalDateTime.of(date, LocalTime.MAX)));
     }
 }

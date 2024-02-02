@@ -1,4 +1,4 @@
-package ru.develop.makeanappointment.ws;
+package ru.develop.makeanappointment.slot.soap;
 
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.ApplicationContext;

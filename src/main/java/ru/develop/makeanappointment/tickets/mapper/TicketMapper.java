@@ -2,16 +2,10 @@ package ru.develop.makeanappointment.tickets.mapper;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-import ru.develop.makeanappointment.doctor.model.Doctor;
-import ru.develop.makeanappointment.patient.model.Patient;
 import ru.develop.makeanappointment.tickets.dto.TicketDto;
-import ru.develop.makeanappointment.tickets.model.Rule;
 import ru.develop.makeanappointment.tickets.model.Ticket;
 
-import java.time.Duration;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,15 +35,4 @@ public class TicketMapper {
         }
         return ticketDtoList;
     }
-
-//    public static Ticket toTicket(Doctor doctor, LocalDateTime dataStartOfAdmission, Duration duration, Integer cabinetNumber) {
-//        return Ticket.builder()
-//                .doctor(doctor)
-//                .patient(null)
-//                .dateStartOfAdmission(dataStartOfAdmission)
-//                .duration(duration)
-//                .cabinetNumber(cabinetNumber)
-//                .build();
-//    }
-
 }

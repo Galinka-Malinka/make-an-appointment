@@ -8,9 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.DirtiesContext;
 import ru.develop.makeanappointment.doctor.dto.DoctorDto;
-import ru.develop.makeanappointment.exception.NotFoundException;
 import ru.develop.makeanappointment.doctor.model.Doctor;
 import ru.develop.makeanappointment.doctor.service.DoctorService;
+import ru.develop.makeanappointment.exception.NotFoundException;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;

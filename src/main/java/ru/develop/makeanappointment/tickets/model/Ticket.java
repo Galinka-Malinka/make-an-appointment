@@ -5,12 +5,10 @@ import com.vladmihalcea.hibernate.type.interval.PostgreSQLIntervalType;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-import org.antlr.v4.runtime.misc.Interval;
 import org.hibernate.annotations.Type;
 import ru.develop.makeanappointment.doctor.model.Doctor;
 import ru.develop.makeanappointment.patient.model.Patient;
 
-import javax.validation.constraints.NotNull;
 import java.time.Duration;
 import java.time.LocalDateTime;
 

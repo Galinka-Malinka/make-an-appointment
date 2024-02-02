@@ -25,6 +25,4 @@ public class TicketDto {
     Duration duration;
 
     Integer cabinetNumber;
-
-
 }

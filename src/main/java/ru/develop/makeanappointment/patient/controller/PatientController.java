@@ -22,7 +22,7 @@ public class PatientController {
     }
 
     @GetMapping("/{id}")
-    public PatientDto get (@PathVariable Long id) {
+    public PatientDto get(@PathVariable Long id) {
         return patientService.get(id);
     }
 

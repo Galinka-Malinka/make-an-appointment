@@ -13,6 +13,7 @@ import ru.develop.makeanappointment.patient.service.PatientService;
 
 import java.nio.charset.StandardCharsets;
 
+import static org.hamcrest.Matchers.is;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.when;
@@ -20,7 +21,6 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static org.hamcrest.Matchers.is;
 
 @WebMvcTest(controllers = PatientController.class)
 public class PatientControllerTest {
@@ -41,8 +41,8 @@ public class PatientControllerTest {
         when(service.create(any())).thenReturn(patientDto);
 
         mvc.perform(post("/patient").content(objectMapper.writeValueAsString(patientDto))
-                .characterEncoding(StandardCharsets.UTF_8)
-                .contentType(MediaType.APPLICATION_JSON))
+                        .characterEncoding(StandardCharsets.UTF_8)
+                        .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.name", is(patientDto.getName()), String.class));
     }

@@ -9,7 +9,7 @@ import ru.develop.makeanappointment.patient.storage.PatientStorage;
 
 @Service
 @RequiredArgsConstructor
-public class PatientServiceImpl implements PatientService{
+public class PatientServiceImpl implements PatientService {
 
     private final PatientStorage patientStorage;
 

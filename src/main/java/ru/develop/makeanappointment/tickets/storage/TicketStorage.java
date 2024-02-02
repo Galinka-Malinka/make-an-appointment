@@ -14,4 +14,6 @@ public interface TicketStorage extends JpaRepository<Ticket, Long> {
                                                                                                LocalDateTime max);
 
     List<Ticket> findAllByPatientId(Long patientId);
+
+    List<Ticket> findAllByPatientUuid(String uuid);
 }

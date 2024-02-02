@@ -3,9 +3,9 @@ package ru.develop.makeanappointment.doctor.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.develop.makeanappointment.doctor.dto.DoctorDto;
-import ru.develop.makeanappointment.exception.NotFoundException;
 import ru.develop.makeanappointment.doctor.mapper.DoctorMapper;
 import ru.develop.makeanappointment.doctor.storage.DoctorStorage;
+import ru.develop.makeanappointment.exception.NotFoundException;
 
 @Service
 @RequiredArgsConstructor
@@ -20,7 +20,7 @@ public class DoctorServiceImpl implements DoctorService {
 
     @Override
     public DoctorDto get(Long id) {
-       return   DoctorMapper.toDoctorDto(doctorStorage.findById(id)
+        return DoctorMapper.toDoctorDto(doctorStorage.findById(id)
                 .orElseThrow(() -> new NotFoundException("Врач с id " + id + " не найден.")));
     }
 
