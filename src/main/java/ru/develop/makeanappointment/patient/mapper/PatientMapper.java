@@ -16,12 +16,14 @@ public class PatientMapper {
         return Patient.builder()
                 .name(patientDto.getName())
                 .uuid(UUID.randomUUID().toString())
+                .birthday(patientDto.getBirthday())
                 .build();
     }
 
     public static PatientDto toPatientDto(@NotNull Patient patient) {
         return PatientDto.builder()
                 .name(patient.getName())
+                .birthday(patient.getBirthday())
                 .build();
     }
 }

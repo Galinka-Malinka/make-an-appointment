@@ -1,8 +1,11 @@
 package ru.develop.makeanappointment.patient.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+
+import java.util.Date;
 
 @Entity
 @Table(name = "patients")
@@ -21,4 +24,8 @@ public class Patient {
 
     @Column(name = "name", nullable = false)
     String name;
+
+    @Column(name = "birthday", nullable = false)
+    @JsonFormat(pattern = "dd.MM.yyyy")
+    Date birthday;
 }
