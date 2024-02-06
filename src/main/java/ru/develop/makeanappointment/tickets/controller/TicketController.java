@@ -17,7 +17,7 @@ public class TicketController {
 
     private final TicketService ticketService;
 
-    @PostMapping("/ticket/{slotId}")
+    @PatchMapping ("/ticket/{slotId}")
     @ResponseStatus(HttpStatus.CREATED)
     public TicketDto makeAnAppointment(@PathVariable Long slotId, @RequestParam @NotNull Long patientId) {
         log.info("Запись на приём пациента с id {} на слот с id {}", patientId, slotId);
